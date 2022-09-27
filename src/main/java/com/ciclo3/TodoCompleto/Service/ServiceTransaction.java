@@ -33,7 +33,7 @@ public class ServiceTransaction implements ServiceInterfaceTransaction{
     }
 
     @Override
-    public String getCreateTransaction(Transaction TransactionIn) {
+    public String setCreateTransaction(Transaction TransactionIn) {
         //Preguntamos si ya hay alguna Transaction ya registrada con ese Id.
         Optional<Transaction> TransactionBD = repositoryTransaction.findById(TransactionIn.getIdTransaction());
         if(!TransactionBD.isPresent()){

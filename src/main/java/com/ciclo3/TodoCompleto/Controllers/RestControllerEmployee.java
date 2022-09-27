@@ -39,7 +39,7 @@ public class RestControllerEmployee {
     @PostMapping("/CreateEmployee")
     public ResponseEntity<String> PostCreateEmployee(@RequestBody Employee EmployeeX){
         try {
-            String message =serviceInterfaceEmployee.getCreateEmployee(EmployeeX);
+            String message =serviceInterfaceEmployee.setCreateEmployee(EmployeeX);
             return new ResponseEntity<>(message,HttpStatus.OK);
         }catch (Exception e){
             return new ResponseEntity<>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);

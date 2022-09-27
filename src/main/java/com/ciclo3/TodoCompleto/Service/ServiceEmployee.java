@@ -5,6 +5,7 @@ import com.ciclo3.TodoCompleto.Repositories.RepositoryEmployee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -17,6 +18,7 @@ public class ServiceEmployee implements ServiceInterfaceEmployee{
     //Inyectar un objeto del repositorio de la entidad Employee
     @Autowired
     RepositoryEmployee repositoryEmployee;
+
 
     @Override
     public List<Employee> getEmployee() {
@@ -33,7 +35,7 @@ public class ServiceEmployee implements ServiceInterfaceEmployee{
     }
 
     @Override
-    public String getCreateEmployee(Employee EmployeeIn) {
+    public String setCreateEmployee(Employee EmployeeIn) {
         //Preguntamos si ya hay alguna Employee ya registrada con ese Id.
         Optional<Employee> EmployeeBD = repositoryEmployee.findById(EmployeeIn.getIdEmployee());
         if(!EmployeeBD.isPresent()){
@@ -80,4 +82,5 @@ public class ServiceEmployee implements ServiceInterfaceEmployee{
         }
         throw new Exception("Employee NOOOOO encontarda");
     }
+
 }

@@ -40,7 +40,7 @@ public class RestControllerEnterprise {
     @PostMapping("/CreateEnterprise")
     public ResponseEntity<String> PostCreateEnterprise(@RequestBody Enterprise EnterpriseX){
         try {
-            String message =serviceInterfaceEnterprise.getCreateEnterprise(EnterpriseX);
+            String message =serviceInterfaceEnterprise.setCreateEnterprise(EnterpriseX);
             return new ResponseEntity<>(message,HttpStatus.OK);
         }catch (Exception e){
             return new ResponseEntity<>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);

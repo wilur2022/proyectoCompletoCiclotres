@@ -39,7 +39,7 @@ public class ResTControllerTransaction {
     @PostMapping("/CreateTransaction")
     public ResponseEntity<String> PostCreateTransaction(@RequestBody Transaction TransactionX){
         try {
-            String message =serviceInterfaceTransaction.getCreateTransaction(TransactionX);
+            String message =serviceInterfaceTransaction.setCreateTransaction(TransactionX);
             return new ResponseEntity<>(message,HttpStatus.OK);
         }catch (Exception e){
             return new ResponseEntity<>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);

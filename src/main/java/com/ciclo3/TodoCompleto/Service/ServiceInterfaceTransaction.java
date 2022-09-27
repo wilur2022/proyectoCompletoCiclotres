@@ -14,7 +14,7 @@ public interface ServiceInterfaceTransaction {
 
 
     //Metodo que nos cree una Transaction
-    public String getCreateTransaction(Transaction TransactionIn);
+    public String setCreateTransaction(Transaction TransactionIn);
 
 
     //Metodo que nos permita actualizar una Transaction

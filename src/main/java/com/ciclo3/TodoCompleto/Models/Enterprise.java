@@ -23,7 +23,7 @@ public class Enterprise {
     @OneToMany(mappedBy = "enterpriseEmployee")
     private List<Employee> employees;
     @Column
-    private Date createdAtEnterprise;
+    private java.sql.Date createdAtEnterprise;
     @Column
     private Date updatedAtEnterprise;
 
@@ -33,14 +33,12 @@ public class Enterprise {
     //Constructor
 
 
-    public Enterprise(Long idEnterprise, String nameEnterprise, String NITEnterprise, String phoneEnterprise, String addressEnterprise, Date createdAtEnterprise, Date updatedAtEnterprise) {
+    public Enterprise(Long idEnterprise, String nameEnterprise, String NITEnterprise, String phoneEnterprise, String addressEnterprise) {
         this.idEnterprise = idEnterprise;
         this.nameEnterprise = nameEnterprise;
         this.NITEnterprise = NITEnterprise;
         this.phoneEnterprise = phoneEnterprise;
         this.addressEnterprise = addressEnterprise;
-        this.createdAtEnterprise = createdAtEnterprise;
-        this.updatedAtEnterprise = updatedAtEnterprise;
     }
 
     //Constructor Empty
@@ -89,11 +87,11 @@ public class Enterprise {
         this.addressEnterprise = addressEnterprise;
     }
 
-    public Date getCreatedAtEnterprise() {
+    public java.sql.Date getCreatedAtEnterprise() {
         return createdAtEnterprise;
     }
 
-    public void setCreatedAtEnterprise(Date createdAtEnterprise) {
+    public void setCreatedAtEnterprise(java.sql.Date createdAtEnterprise) {
         this.createdAtEnterprise = createdAtEnterprise;
     }
 

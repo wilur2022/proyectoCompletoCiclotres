@@ -1,5 +1,6 @@
 package com.ciclo3.TodoCompleto.Service;
 
+import com.ciclo3.TodoCompleto.Models.Employee;
 import com.ciclo3.TodoCompleto.Models.Enterprise;
 import com.ciclo3.TodoCompleto.Repositories.RepositoryEnterprise;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,7 @@ public class ServiceEnterprise implements ServiceInterfaceEnterprise{
     }
 
     @Override
-    public String getCreateEnterprise(Enterprise enterpriseIn) {
+    public String setCreateEnterprise(Enterprise enterpriseIn) {
         //Preguntamos si ya hay alguna enterprise ya registrada con ese Id.
         Optional<Enterprise> EnterpriseBD = repositoryEnterprise.findById(enterpriseIn.getIdEnterprise());
         if(!EnterpriseBD.isPresent()){
@@ -67,6 +68,10 @@ public class ServiceEnterprise implements ServiceInterfaceEnterprise{
             enterpriseBD.setPhoneEnterprise(enterpriseIn.getPhoneEnterprise());
         }
 
+        if(enterpriseIn.getCreatedAtEnterprise()!=null && !enterpriseIn.getCreatedAtEnterprise().equals("")){
+            enterpriseBD.setCreatedAtEnterprise(enterpriseIn.getCreatedAtEnterprise());
+        }
+
         enterpriseBD.setUpdatedAtEnterprise(Today);
 
         return repositoryEnterprise.save(enterpriseBD);
@@ -81,4 +86,6 @@ public class ServiceEnterprise implements ServiceInterfaceEnterprise{
         }
         throw new Exception("Enterprise NOOOOO encontarda");
     }
+
+
 }

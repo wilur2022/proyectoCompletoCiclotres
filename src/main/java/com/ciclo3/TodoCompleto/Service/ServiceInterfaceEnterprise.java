@@ -1,5 +1,6 @@
 package com.ciclo3.TodoCompleto.Service;
 
+import com.ciclo3.TodoCompleto.Models.Employee;
 import com.ciclo3.TodoCompleto.Models.Enterprise;
 
 import java.util.List;
@@ -15,7 +16,7 @@ public interface ServiceInterfaceEnterprise {
 
 
     //Metodo que nos cree una Enterprise
-    public String getCreateEnterprise(Enterprise enterpriseIn);
+    public String setCreateEnterprise(Enterprise enterpriseIn);
 
 
     //Metodo que nos permita actualizar una enterprise
@@ -23,4 +24,5 @@ public interface ServiceInterfaceEnterprise {
 
     //Metodo que elimina una enterprise
     public String getDeleteEnterprise(Long idEnterprise) throws Exception;
+
 }

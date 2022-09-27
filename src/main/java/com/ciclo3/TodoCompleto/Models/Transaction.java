@@ -21,15 +21,19 @@ public class Transaction {
     @ManyToOne
     private Enterprise enterpriseTransaction;
     @Column
-    private Date createdAtTransaction;
+    private java.sql.Date createdAtTransaction;
     @Column
     private Date updatedAtTransaction;
 
     //Constructor
-    public Transaction(Long idTransaction, String conceptTransaction, float amountTransaction, Date createdAtTransaction, Date updatedAtTransaction) {
+
+
+    public Transaction(Long idTransaction, String conceptTransaction, float amountTransaction, Employee employeeTransaction, Enterprise enterpriseTransaction, java.sql.Date createdAtTransaction, Date updatedAtTransaction) {
         this.idTransaction = idTransaction;
         this.conceptTransaction = conceptTransaction;
         this.amountTransaction = amountTransaction;
+        this.employeeTransaction = employeeTransaction;
+        this.enterpriseTransaction = enterpriseTransaction;
         this.createdAtTransaction = createdAtTransaction;
         this.updatedAtTransaction = updatedAtTransaction;
     }
@@ -80,19 +84,19 @@ public class Transaction {
         this.enterpriseTransaction = enterpriseTransaction;
     }
 
-    public Date getCreatedAtTransaction() {
-        return createdAtTransaction;
-    }
-
-    public void setCreatedAtTransaction(Date createdAtTransaction) {
-        this.createdAtTransaction = createdAtTransaction;
-    }
-
     public Date getUpdatedAtTransaction() {
         return updatedAtTransaction;
     }
 
     public void setUpdatedAtTransaction(Date updatedAtTransaction) {
         this.updatedAtTransaction = updatedAtTransaction;
+    }
+
+    public java.sql.Date getCreatedAtTransaction() {
+        return createdAtTransaction;
+    }
+
+    public void setCreatedAtTransaction(java.sql.Date createdAtTransaction) {
+        this.createdAtTransaction = createdAtTransaction;
     }
 }

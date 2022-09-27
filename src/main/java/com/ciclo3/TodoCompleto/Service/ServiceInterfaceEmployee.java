@@ -14,7 +14,7 @@ public interface ServiceInterfaceEmployee {
 
 
     //Metodo que nos cree una Employee
-    public String getCreateEmployee(Employee EmployeeIn);
+    public String setCreateEmployee(Employee EmployeeIn);
 
 
     //Metodo que nos permita actualizar una Employee
@@ -22,4 +22,5 @@ public interface ServiceInterfaceEmployee {
 
     //Metodo que elimina una Employee
     public String getDeleteEmployee(Long idEmployee) throws Exception;
+
 }

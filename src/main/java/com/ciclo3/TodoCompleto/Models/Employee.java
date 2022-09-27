@@ -4,7 +4,6 @@ package com.ciclo3.TodoCompleto.Models;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -14,6 +13,7 @@ public class Employee {
     //Atributes
     @Id
     private Long idEmployee;
+
     @Column
     private String nameEmployee;
     @Column
@@ -33,10 +33,12 @@ public class Employee {
     @Column
     private Date updatedAtEmployee;
     @Column
-    private Date createdAtEmployee;
+    private java.sql.Date createdAtEmployee;
 
     //Contructor
-    public Employee(Long idEmployee, String nameEmployee, String phoneEmployee, String emailEmployee, Date updatedAtEmployee, Date createdAtEmployee) {
+
+
+    public Employee(Long idEmployee, String nameEmployee, String phoneEmployee, String emailEmployee, Date updatedAtEmployee, java.sql.Date createdAtEmployee) {
         this.idEmployee = idEmployee;
         this.nameEmployee = nameEmployee;
         this.phoneEmployee = phoneEmployee;
@@ -115,11 +117,11 @@ public class Employee {
         this.updatedAtEmployee = updatedAtEmployee;
     }
 
-    public Date getCreatedAtEmployee() {
+    public java.sql.Date getCreatedAtEmployee() {
         return createdAtEmployee;
     }
 
-    public void setCreatedAtEmployee(Date createdAtEmployee) {
+    public void setCreatedAtEmployee(java.sql.Date createdAtEmployee) {
         this.createdAtEmployee = createdAtEmployee;
     }
 }
